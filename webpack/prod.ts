@@ -1,7 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const WebpackBar = require('webpackbar');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
@@ -35,7 +35,7 @@ module.exports = {
   },
   optimization: {
     minimize: true,
-    minimizer: [new OptimizeCssAssetsPlugin({}), new TerserPlugin()],
+    minimizer: [new CssMinimizerPlugin({}), new TerserPlugin()],
     splitChunks: {
       chunks: 'all',
       minSize: 2048, //最小chunk(bytes)
