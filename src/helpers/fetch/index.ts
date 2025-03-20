@@ -25,7 +25,7 @@ instance.interceptors.response.use(
   },
   (responseError) => {
     console.log('request error:', responseError);
-    if (responseError.status === 401) {
+    if ([401, 404, 403].includes(responseError.status)) {
       const origin = window.location.origin;
       window.localStorage.removeItem('TOKEN');
       window.location.href = origin + '/login';
