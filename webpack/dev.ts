@@ -34,6 +34,11 @@ module.exports = {
     hot: true,
     open: true,
     historyApiFallback: true,
+    proxy: {
+      '/backstage': {
+        target: 'http://localhost:3000/',
+      },
+    },
   },
   target: 'web',
   resolve: {
