@@ -44,9 +44,7 @@ export const CommoditySelect: FC<ICommoditySelect> = (props) => {
       onChange={onInternalChange}
       value={value?.id}
       showSearch
-      filterOption={(input, option) =>
-        (option?.label ?? '').toLowerCase().includes(input.toLowerCase())
-      }
+      filterOption={(input, option) => (option?.label ?? '').includes(inpu)}
     />
   );
 };

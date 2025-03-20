@@ -26,9 +26,7 @@ export const DepartmentSelect: FC<Omit<SelectProps, 'options'>> = (props) => {
       placeholder="请选择部门"
       allowClear
       showSearch
-      filterOption={(input, option) =>
-        (option?.label ?? '').toLowerCase().includes(input.toLowerCase())
-      }
+      filterOption={(input, option) => (option?.label ?? '').includes(input)}
       {...restProps}
     />
   );
